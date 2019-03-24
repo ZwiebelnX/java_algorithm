@@ -2,10 +2,10 @@ package offer;
 
 public class HasPath {
     public static void main(String[] args) {
-        char[] matrix = {'a', 'b', 't', 'g', 'c', 'f', 'c', 's', 'j', 'd', 'e', 'h'};
+        char[] matrix = {'A', 'B', 'C', 'E', 'S', 'F', 'C', 'S', 'A', 'D', 'E', 'E'};
         int rows = 3;
         int cols = 4;
-        char[] str = {'b', 'f', 'c', 'e'};
+        char[] str = {'S', 'E', 'E'};
         System.out.println(hasPath(matrix, rows, cols, str));
     }
 
@@ -33,7 +33,7 @@ public class HasPath {
     private static boolean hasPathCore(char[] matrix, int rows, int cols, int row, int col,
                                        char[] c, int pathLength, boolean[][] visited) {
         // 边界与被查看过的节点直接返回false
-        if (col > cols || row > rows || col < 0 || row < 0 || visited[row][col]) {
+        if (col >= cols || row >= rows || col < 0 || row < 0 || visited[row][col]) {
             return false;
         }
 
