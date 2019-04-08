@@ -1,4 +1,4 @@
-package datastructure;
+package structure;
 
 /**
  * 线段树
