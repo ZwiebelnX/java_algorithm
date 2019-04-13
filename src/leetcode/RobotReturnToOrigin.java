@@ -12,14 +12,26 @@ public class RobotReturnToOrigin {
     }
 
     private boolean judgeCircle(String moves) {
-        Map<Character, Integer> ans = new HashMap<>(4);
+        int[] temp = new int[2];
 
         for(int i = 0; i < moves.length(); i++){
             char c = moves.charAt(i);
-            ans.merge(c, 1, (value, val) -> val += value);
+            switch (c){
+                case 'U':
+                    temp[0]++;
+                    break;
+                case 'D':
+                    temp[0]--;
+                    break;
+                case 'L':
+                    temp[1]++;
+                    break;
+                case 'R':
+                    temp[1]--;
+                    break;
+            }
         }
 
-        return ans.getOrDefault('U', 0).equals(ans.getOrDefault('D', 0)) &&
-                ans.getOrDefault('R', 0).equals(ans.getOrDefault('L', 0));
+        return temp[0] == 0 && temp[1] == 0;
     }
 }
