@@ -1,3 +1,5 @@
+package leetcode.dp;
+
 public class PackageProblem {
     public static void main(String[] args) {
         int[] weight = {2, 2, 6, 5, 4};
