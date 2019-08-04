@@ -12,7 +12,7 @@ public class RobotMovementCount {
     }
 
     private static int movingCount(int threshold, int rows, int cols){
-        boolean[][] visited = new boolean[rows][cols];
+        boolean[][] visited = new boolean[rows][cols]; //优化为一维数组
 
         return movingCountCore(threshold, rows, cols, 0, 0, visited);
     }
